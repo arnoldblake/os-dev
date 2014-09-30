@@ -1,3 +1,5 @@
-; nasm <file>.asm -f bin -o <file>.bin
-; od -t x1 -A n <file>.bin
-; qemu-system-i386 <file>.bin
+nasm <file>.asm -f bin -o <file>.bin
+od -t x1 -A n <file>.bin
+qemu-system-i386 <file>.bin
+objdump -d <file>.o
+ndisasm -b 32 <file>.bin > <file>.dis
