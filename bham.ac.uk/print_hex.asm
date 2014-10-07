@@ -5,23 +5,16 @@
 print_hex:
   pusha
 
-    xor ax, ax					; Zero AX and move bitmask into AX
+    xor ax, ax ; Zero AX and move bitmask into AX
     add ax, 0x000F
 
-  print_hex_start:				; Move input DX into BX, and it with the bitmask
-    mov bx, dx
+  print_hex_start: ; Move input DX into BX, and it with the bitmask
+    mov bx, dx 
     and bx, ax
-    cmp bx, 9
-    jle print_hex_number
-    jmp print_hex_alpha
-
-  print_hex_number:
-    add bx, 48
-    jmp print_hex_end
-
-  print_hex_alpha:
-    add bx, 55
-    jmp print_hex_end
+    add bx, 0x30
+    cmp bx, 0x39
+    jle print_hex_end:
+    add bx, 0x08
 
   print_hex_end:
     push bx
