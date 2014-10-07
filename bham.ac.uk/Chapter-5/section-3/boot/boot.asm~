@@ -26,7 +26,7 @@ KERNEL_OFFSET equ 0x1000 ; Memory offset where we are loading the kernel to
 [bits 16]
 
 load_kernel:
-  mov bx, MSG_LOAD_KERNEL ; Print that we are loading the kernel
+  mov bx, MSG_LOAD_KERNEL
   call print_string
 
   mov bx, KERNEL_OFFSET
